@@ -23,7 +23,8 @@ resource "aws_instance" "example" {
     host        = coalesce(self.public_ip, self.private_ip)
     type        = "ssh"
     user        = var.INSTANCE_USERNAME
-    private_key = file(var.PATH_TO_PRIVATE_KEY)
+    agent       = true
+    #private_key = file(var.PATH_TO_PRIVATE_KEY)
   }
 }
 
